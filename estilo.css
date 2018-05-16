@@ -1,0 +1,66 @@
+body{
+            margin: 0;
+            padding: 0;
+            font-family: "Montserrat",arial, sans-serif;
+            font-size: 12px;
+            background-image: url(https://hdbackgroundspot.com//storage/upload/shapes-wallpaper/shapes-wallpaper-85.jpg);
+            background-position: bottom center;
+        }
+        .contenedor{
+            width: 80%;
+            margin: 0 auto;
+            background-color: #969FA1;
+            border-radius: 20px;
+            color: #012B36;
+        }
+        header{
+            padding: 40x 5px;
+            margin-bottom: 20px;
+            background: url(https://st2.depositphotos.com/3950183/8050/i/950/depositphotos_80509678-stock-photo-blue-green-gradient-triangle-shaped.jpg) no-repeat bottom center;
+           
+            background-size: 100%;
+        }
+        header h1,header h2, header h4{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .contenedor section{
+            margin: 10px;
+        }
+section {
+    float: left;
+    width: 47.88%;
+}
+section:hover {
+  transform: scale(1.04) translateY(-5px) translateX(-5px);
+  box-shadow: 12px 12px 10px rgba(0,0,0,.2);
+}
+section h2{
+    background: #008BB0;
+    text-transform: uppercase;
+    padding: 10px;
+}
+
+#imagenes img{
+    width: 15%;
+    display: inline-block;
+    padding: 10px;
+    background:#0B4351;
+    margin:5px;
+     clip-path: polygon(5% 5%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%); /*Imagenes en hexagonos*/
+}
+#imagenes img:hover{
+   
+  transform: scale(1.54) translateY(-5px) translateX(-5px);
+  box-shadow: 12px 12px 10px rgba(0,0,0,.2);
+}
+
+/*Solucionar elementos flotantes*/
+.clear{
+    clear: both;
+}
+
+
+
+
