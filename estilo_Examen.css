@@ -1,0 +1,108 @@
+* { 
+  margin:0;
+  padding:0;
+}
+a:link, a:visited, a:hover, a:active {
+  color:#cfc;
+  font-size:1em;
+}
+body {
+  background:#eed;
+  font-family:verdana;
+}
+h1 {
+  color:#00a;
+  font-size:1.8em;
+  padding-bottom:.5em; 
+}
+img {
+  height:auto;
+  margin-bottom:.5em;
+  margin-top:.2em;
+  max-width:100%;
+}
+li {
+  margin-left:1.3em;
+  padding-bottom:.3em;
+  padding-right:.2em;
+}
+p {
+  font-size:1em;
+  padding-bottom:.5em; 
+}
+#cabecera {
+  background-color:#000;
+  color:#f96;
+  padding:2%;
+}
+#columnas {
+  background-color:#ddd;
+  overflow:hidden;
+  padding-bottom:2%;
+}
+#contenedor {
+  margin:10px auto;
+  width:95%;
+}
+#contenido {
+  background-color:#ddd;
+  float:right;
+  
+  padding:2%;
+  width:71%;
+}
+#menu {
+  background-color:#999;
+  float:left;
+  
+  padding:2%;
+  width:21%;
+}
+#pie { 
+  background-color:#bbb;
+  clear:both;
+  color:#900;
+  padding:2%;
+  text-align:center;
+}
+/*Imagenes*/
+.redondo{
+    border-radius: 10px;
+}
+.azul{
+    background-color: #28A8C1;
+}
+.naranja{
+    background-color: #FA9C00;
+}
+/*Botonos menu*/
+nav ul { width: 100%; }
+
+
+nav ul li {
+  list-style: none;
+  
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+nav ul li a{
+    text-decoration: none;
+    padding: 10px;
+    margin: 0;
+    display: block;
+    background-color: #32BD9E;
+}
+nav ul li a:hover{
+    background-color: #48CFB1;
+}
+
+/*Boton*/
+.boton{
+    display: inline-block;
+    padding: 25px;
+    margin: 15px;
+    border-radius: 10px;
+    background-color: #6CCA2A;
+    text-decoration: none;
+}

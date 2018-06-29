@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> Funciones 01 </title>
+    <script>
+        function square(){            
+            //Invocando a la función
+            var numero=prompt("Proporcione número entero",1);
+            numero=parseInt(numero); //Convierto en entero la cadena
+            console.log(numero*numero);
+        }
+        function suma(){
+            alert(parseInt(n1.value)+parseInt(n2.value));
+        }
+    </script>
+</head>
+    <body>
+        
+        <input type="button" value="Pulsar botón" onclick="console.log('Hola Mundo');" ondblclick="square();"/>
+        <div>
+            <label for="n1">Primer Número:</label><input name="n1" id="n1" value="" />
+            <label for="n2">Primer Número:</label><input name="n2" id="n2" value="" />
+            <input type="button" onclick="suma();" value="Sumar" /> 
+        </div>
+</body>
+</html>

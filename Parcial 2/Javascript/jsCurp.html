@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> Title </title>
+    <script type="text/javascript">
+        function calcularCurp(){
+            var curp=null;
+            
+           
+            var pat=paterno.value;
+            pat =pat.toUpperCase();
+            curp=pat[0];
+            for(var x=1; pat.length; x++){
+                if(pat[x]=="A"||pat[x]=="E" ||pat[x]=="I" ||pat[x]=="O" ||pat[x]=="U" ){
+                    curp+=pat[x];
+                    break;
+                }
+            }
+            var mat=materno.value;
+            curp+=mat[0];           
+            
+            var nom=nombre.value;
+            curp+=nom[0];
+            
+            var an=anio.value;
+            an="00"+an;
+            curp+=an[an.length-2]+an[an.length-1];
+            
+            var m=mes.value;
+            m="00"+m;
+            curp+=m[m.length-2]+m[m.length-1];
+            
+            
+            var d=dia.value;
+            d="00"+d;
+            curp+=d[d.length-2]+d[d.length-1];
+            
+    document.getElementById("resultado").innerHTML=curp.toUpperCase();
+            //alert(curp.toUpperCase());
+        }
+    </script>
+    <style>
+        form{ width: 330px; background: #12b2a1; padding: 10px; border-radius: 20px; margin: 0 auto;}
+        input{ margin: 5px; background: rgba(255,255,255,0.9);}
+    </style>
+</head>
+
+<body>
+    <form id="form1">
+        <input type="text" id="nombre" name="nombre" placeholder="proporcione nombre valido" /> 
+        <input type="text" id="paterno" name="paterno" placeholder="proporcione paterno valido" /> 
+        <input type="text" id="materno" name="materno" placeholder="proporcione materno valido" />
+        <input type="text" id="dia" name="dia" placeholder="proporcione dia valido" />
+        <input type="text" id="mes" name="mes" placeholder="proporcione mes valido" />
+        <input type="text" id="anio" name="anio" placeholder="proporcione anio valido" /> 
+        
+        
+        
+        <input type="button" value="calcular" onclick="calcularCurp()" />
+    </form>
+    <div id="resultado">
+    </div>
+</body>
+</html>

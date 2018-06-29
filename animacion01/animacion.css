@@ -5,7 +5,8 @@
     border: 1px solid #ccc;
     padding: 20px;
     position: relative;
-    height: 100px;
+    height: 400px;
+    width: 400px;
 }
 
 .figura {
@@ -15,7 +16,9 @@
     padding: 25px;
     width: 8px;
     background-color: #caebb7;
-    border: 2px solid #5b973b;
+    
+    -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     animation: mover 4s ease 0s infinite normal running;
    -o-animation: mover 4s ease 0s infinite normal running; /* Opera */
    -ms-animation: mover 4s ease 0s infinite normal running; /* IE */
@@ -26,13 +29,27 @@
 @keyframes mover {
     0% {
         left: 0%;
+        top: 0%;
+    }
+    25% {
+        left: 90%;
+        top:0%;
+        transform: rotate(1080deg);
     }
     50% {
         left: 90%;
-        transform: rotate(1080deg);
+        top:90%;
+        transform: rotate(2160deg);
+    }
+    75% {
+        left: 0%;
+        top:90%;
+        transform: rotate(3240deg);
     }
     100% {
         left: 0%;
+        top:0%;
+        transform: rotate(4320deg);
     }
 }
 
@@ -43,12 +60,26 @@ sería para Safari y Chrome, pero tendríamos que añadir los demás. */
 @-webkit-keyframes mover {
     0% {
         left: 0%;
+        top: 0%;
+    }
+    25% {
+        left: 90%;
+        top:0%;
+        -webkit-transform: rotate(1080deg);
     }
     50% {
         left: 90%;
+        top:90%;
+        -webkit-transform: rotate(1080deg);
+    }
+    75% {
+        left: 0%;
+        top:90%;
         -webkit-transform: rotate(1080deg);
     }
     100% {
         left: 0%;
+        top:0%;
+        -webkit-transform: rotate(1080deg);
     }
 }

@@ -1,0 +1,40 @@
+/* Aquí van los estilos generales del sitio */
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #117722;
+    
+}
+span::before{
+    content: "Estado inicial";
+}
+@media only screen and ( max-width: 1024px ) {
+	
+  /* Aquí van los estilos para iPad horizontal */
+    body{
+        background-color: #8A3300;
+    }
+    span::before{
+        content: "Diseño para pantallas pequeñas";
+    }
+}
+ 
+ /* Aquí van los estilos para tablates */
+@media only screen and ( max-width: 768px ) {
+	
+}
+ 
+/* Aquí van los estilos para mobiles: horizontal */ 
+@media only screen and ( max-width: 480px ) {
+
+	
+}
+
+ 
+@media only screen and ( max-width: 320px ) {
+	
+  /* Aquí van los estilos para mobiles: vertical */
+	
+}

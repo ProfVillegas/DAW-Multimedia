@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> Javascript 42 </title>
+    <script>
+        function iniciar(){
+            var labels=document.getElementsByClassName("label");
+            for(x=0; x<labels.length; x++){
+                labels[x].style.color="Blue";
+            }
+            var negritas= document.getElementsByTagName("strong");
+            for(x=0;x<negritas.length;x++){
+                negritas[x].style.textTransform="uppercase";
+            }
+            document.getElementById("apellido").style.fontStyle="italic";
+            document.querySelectorAll("#apellido b")[0].style.fontStyle="normal";
+            
+            /*Crear elemento*/
+            
+           
+            var tds=document.getElementsByTagName("td");
+            for(var x=0; x<tds.length; x++){
+                 var texto= document.createTextNode(x+1);
+                tds[x].appendChild(texto);
+                tds[x].addEventListener("click",function(){
+                    alert(texto);
+                });
+            }
+            
+        }
+    </script>
+    <style type="text/css">
+        #tabla{
+            width: 300px;
+            border-spacing: 0;
+            border:1px solid #ccc;
+        }
+        #tabla td{
+            width: 100px;
+            height: 100px;
+            empty-cells: show;
+            content: " ";
+            border:1px solid #ccc;
+        }
+    </style>
+</head>
+	<body onload="iniciar();">
+        <p id="titulo" class="label">Esta página es <strong>muy sencilla</strong></p>
+        
+        <p id="nombre" class="label"><strong>Nombre</strong> Julian</p>
+        <p id="apellido"  class="label"><b>Apellido</b> Villegas</p>
+        <table id="tabla">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+</body>
+</html>
+
+
+
+
+
+
+
+

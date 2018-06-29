@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Javascript 32 </title>
+    <style>
+        body {
+            -webkit-transition: background-color 2s ease-out;
+            -moz-transition: background-color 2s ease-out;
+            -o-transition: background-color 2s ease-out;
+            transition: background-color 2s ease-out;
+        }
+
+        .slidecontainer {
+            width: 100%;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 25px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+
+        .slider:hover {
+            opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+        #rangeRed{
+            background: rgb(255,0,0);
+            background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(127,0,0,1) 55%, rgba(255,0,0,1) 100%);
+        }
+        #rangeGreen{
+            background: rgb(0,255,0);
+            background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,127,0,1) 55%, rgba(0,255,0,1) 100%);
+        }
+        #rangeBlue{
+            background: rgb(0,0,255);
+            background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,127,1) 55%, rgba(0,0,255,1) 100%);
+        }
+    </style>
+    <script>
+        var slider = "";
+        var colores={red:0, green:0, blue:0};
+
+        function init() {
+            
+            slider = document.getElementsByClassName('slider');
+            slider=[].slice.call(slider); //Convertimos la colección de objetos HTML  a un arreglo
+            
+            //Información sobre forEach https://www.w3schools.com/jsref/jsref_forEach.asp
+            slider.forEach(function(v,i,a) {
+                //Obtener el control del color seleccionado
+                output = document.getElementById("v"+a[i].dataset.color);
+                output.innerHTML=a[i].value;
+                
+                //Actualizar los valores en el array de colores
+                colores[a[i].dataset.color]=a[i].value;
+              
+            });
+            
+            
+        }
+
+        function update(objeto) {
+            var val=objeto.value
+            var color= objeto.dataset.color;
+            
+            colores[color]=val;
+            console.log(colores);
+            
+            output = document.getElementById("v"+color);
+            output.innerHTML = val;
+            
+            document.body.style.backgroundColor = "rgb("+colores["red"]+","+colores["green"]+","+colores["blue"]+")";
+        }
+    </script>
+</head>
+
+<body onload="init()">
+
+    <h1>Slider de colores</h1>
+
+    <div class="slidecontainer">
+        <p>Selecciona los colores:</p>
+        <input type="range" min="0" max="254" value="50" class="slider" id="rangeRed" onchange="update(this)" data-color="red">
+        <input type="range" min="0" max="254" value="50" class="slider" id="rangeGreen" onchange="update(this)" data-color="green">
+        <input type="range" min="0" max="254" value="50" class="slider" id="rangeBlue" onchange="update(this)" data-color="blue">
+        <p>Value: <span class="demo" id="vred"></span></p>
+        <p>Value: <span class="demo" id="vgreen"></span></p>
+        <p>Value: <span class="demo" id="vblue"></span></p>
+    </div>
+
+</body>
+
+</html>

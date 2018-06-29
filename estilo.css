@@ -48,7 +48,7 @@ section h2{
     padding: 10px;
     background:#0B4351;
     margin:5px;
-     clip-path: polygon(5% 5%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%); /*Imagenes en hexagonos*/
+     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /*Imagenes en hexagonos*/
 }
 #imagenes img:hover{
    
