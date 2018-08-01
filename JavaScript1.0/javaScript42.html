@@ -1,0 +1,73 @@
+<!DOCTIPE html>
+<html  Xmlns="http://ww.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+    <title>JavaScript 42</title>
+    <script>
+        function iniciar(){
+            var labels=document.getElementsByClassName("label");
+            for(x=0; x<labels.length;x++){
+                labels[x].style.color="Blue";
+            }
+            var negritas= document.getElementsByTagName("strong");
+            for (x=0; x<negritas.length;x++){
+                negritas[x].style.textTransform="uppercase";
+            }
+            document.getElementById("apellido").style.fontStyle="italic";
+            document.querySelectorAll("#apellido b")[0].style.fontStyle="normal";
+            
+              var parrafo=document.createElement("p");
+            var contenido=document.createTextNode("hola mundo!");
+            parrafo.appendChild(contenido);
+            document.body.appendChild(parrafo);
+            
+            var tds=document.getElementsByTagName("td")
+            for(x=0; x<tds.length;x++){
+                var  texto=document.createTextNode("x+1");
+                tds[x].appendChild(texto);
+                tds[x].addEventListener("click", function(){
+                    alert(texto);
+                });
+            }
+        }
+        
+    </script>
+    <style type="text/css">
+        #tabla{
+            width: 300px;
+            border-spacing:0;
+            border:1px solid #ccc;
+ }
+        #tabla td{
+            width: 100px;
+            height: 100px;
+            empty-cells: show;
+            content: "";
+            border: 1px solid #ccc;
+                   
+ }          
+    </style>
+</head>
+     <body onload="iniciar();">
+        <p id="titulo" class="label">Esta pagina se <strong>muy sencilla</strong></p>
+        <p id="nombre" class="label"><strong>nombre </strong>yajaira</p>
+        <p id="apellido" class="label"><b>Apellido </b>soto</p>
+        <table id="tabla" > 
+            <tr>
+                 <td>coluna 1</td>
+                 <td>coluna 1</td>
+                 <td>coluna 1</td>
+            </tr>
+             <tr>
+                 <td>coluna 1</td>
+                 <td>coluna 1</td>
+                 <td>coluna 1</td>
+            </tr>
+             <tr>
+                 <td>coluna 1</td>
+                 <td>coluna 1</td>
+                 <td>coluna 1</td>
+            </tr>
+         </table>
+    </body>
+</html>
