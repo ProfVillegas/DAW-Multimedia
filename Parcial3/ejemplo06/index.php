@@ -63,26 +63,9 @@
 
     <main role="main" class="container">
 
-        <div class="starter-template">
-            <h1>Bootstrap starter template</h1>
-            <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-        </div>
+        
         <form action="calcular.php" method="get" enctype="multipart/form-data">
-          <div class="form-group">
-            <label for="exampleInputA1">Primer valor</label>
-            <input type="number" name="a" class="form-control" id="exampleInputA1" aria-describedby="AHelp" placeholder="Proporcione primer valor">
-            <small id="AHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputB1">Segundo Valor</label>
-            <input type="number" name="b" class="form-control" id="exampleInputB1" placeholder="Proporcione segundo valor">
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-           <a href="#" id="calcular" class="btn btn-danger">Calcular</a>    
+           
         </form>
 
     </main>
