@@ -34,23 +34,42 @@ class Libro  {
     
     public function guardar(){
        $conexion = new Conexion();
-       
-       if($this->isbn) /*Modifica*/ {
-          $consulta = $conexion->prepare('UPDATE ' . self::TABLA .' SET nombre = :nombre, autor = :autor WHERE id = :id');
+       //Localizar libro
+        $temp=self::buscarPorId($this->isbn);
+           
+       if($temp) /*Modifica*/ {
+          $consulta = $conexion->prepare('UPDATE ' . self::TABLA .' SET nombre = :nombre, autor = :autor WHERE isbn = :isbn');
           $consulta->bindParam(':nombre', $this->nombre);
           $consulta->bindParam(':autor', $this->autor);
           $consulta->bindParam(':isbn', $this->isbn);
           $consulta->execute();
        }else /*Inserta*/ {
-          $consulta = $conexion->prepare('INSERT INTO ' . self::TABLA .' (nombre, autor) VALUES(:nombre, :autor)');
+          $consulta = $conexion->prepare('INSERT INTO ' . self::TABLA .' (nombre, autor,isbn) VALUES(:nombre, :autor,:isbn)');
           $consulta->bindParam(':nombre', $this->nombre);
           $consulta->bindParam(':autor', $this->autor);
+          $consulta->bindParam(':isbn', $this->isbn);
           $consulta->execute();
           $this->isbn = $conexion->lastInsertId();
        }
        $conexion = null;
     }
-    
+    public static function eliminar($isbn){
+       $conexion = new Conexion();
+       //Localizar libro
+        $temp=self::buscarPorId($isbn);
+           
+       if($temp) /*Eliminar*/ {
+          $consulta = $conexion->prepare('DELETE FROM ' . self::TABLA .' WHERE isbn = :isbn');
+          $consulta->bindParam(':isbn', $isbn);
+          $consulta->execute();
+            $conexion=null;           
+           return "Registro eliminado satisfactoriamente";
+       }else /*Si no existe*/ {
+            $conexion = null;
+            return "No se encontro registro";
+       }
+       
+    }
     public static function ListarTodos(){
        $conexion = new Conexion();
        $consulta = $conexion->prepare('SELECT isbn, nombre, autor FROM ' . self::TABLA . ' ORDER BY nombre');
