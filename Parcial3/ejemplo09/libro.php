@@ -113,7 +113,7 @@ class Libro  {
     }
     public static function ListarTodos(){
        $conexion = new Conexion();
-        echo $query='
+         $query='
        SELECT
           `' . self::TABLA . '`.`isbn`,
           `' . self::TABLA . '`.`nombre`,
