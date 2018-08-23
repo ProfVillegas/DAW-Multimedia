@@ -147,12 +147,12 @@ class Libro  {
     public static function buscarPorId($isbn){
        $conexion = new Conexion();
     
-       $consulta = $conexion->prepare('SELECT nombre, autor FROM ' . self::TABLA . ' WHERE isbn = :isbn');
+       $consulta = $conexion->prepare('SELECT nombre, id_autor,descripcion, id_categoria, id_editorial, activo FROM ' . self::TABLA . ' WHERE isbn = :isbn');
        $consulta->bindParam(':isbn', $isbn);
        $consulta->execute();
        $registro = $consulta->fetch(PDO::FETCH_ASSOC);
        if($registro){
-          return new self($registro['nombre'], $registro['autor'], $isbn);
+          return new self($registro['nombre'], $registro['id_autor'],$registro['descripcion'],$registro['id_editorial'], $registro['id_categoria'], $registro['activo'], $isbn);
        }else{
           return false;
        }

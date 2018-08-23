@@ -1,8 +1,8 @@
 <?php
 
 include_once('libro.php');
-$data=Libro::ListarTodos();
-
+$data=Libro::buscarPorId($_GET['isbn']);
+print_r($data);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,39 +42,9 @@ $data=Libro::ListarTodos();
                 </div>
                 <div class="col pt-2">
                     <h2>Registros</h2>
-                    <table class="table table-responsive">
-                        <thead>
-                            <tr>
-                                <td>ISBN</td>
-                                <td>Nombre</td>
-                                <td>Autor</td>
-                                <td>Editorial</td>
-                                <td>Activo</td>
-                                <td>Operaciones</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php                            
-                            foreach($data as $d){
-                            ?>
-                            <tr>
-                                <td>
-                                    <a href="verlibros.php?isbn=<?php echo $d['isbn'];?>">
-                                    <?php echo $d['isbn'];?>
-                                    </a>
-                                
-                                </td>
-                                <td><?php echo $d['nombre'];?></td>
-                                <td><?php echo $d['nombre2']." ".$d['apellido_p']." ".$d['apellido_m'];?></td>
-                                <td><?php echo $d['nombre3'];?></td>
-                                <td><?php echo ($d['activo'])?'<span class="badge badge-success">Disponible</span>':'<span class="badge badge-danger">No disponible</span>';?></td>
-                                <td><span>Editar</span> <span>Eliminar</span> </td>
-                            </tr>
-                            <?php
-                            }
-                            ?>
-                        </tbody>
-                    </table>
+                    <?php
+                    include_once('form.php');
+                    ?>
                 </div>
             </div>
         </div>
@@ -84,3 +54,9 @@ $data=Libro::ListarTodos();
     <script src="recursos/js/bootstrap.min.js"></script>    
     </body>  
 </html>
+
+
+
+
+
+
